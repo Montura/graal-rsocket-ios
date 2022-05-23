@@ -9,13 +9,14 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.source>11</maven.compiler.source>
-    <maven.compiler.target>11</maven.compiler.target>
+    <java.version>1.8</java.version>
+    <maven.compiler.source>8</maven.compiler.source>
+    <maven.compiler.target>8</maven.compiler.target>
 
     <graalvm.sdk.version>22.0.0</graalvm.sdk.version>
     <graalvm.maven.version>21.2.0</graalvm.maven.version>
     <graalvm.image.name>java</graalvm.image.name>
-    <graalvm.main.class>Test</graalvm.main.class>
+    <graalvm.main.class>rsocket_test.Test</graalvm.main.class>
 
     <ios.xcode.platform>iphoneos</ios.xcode.platform>
     <ios.arch>arm64-ios</ios.arch>
@@ -25,6 +26,9 @@
 
     <capcache.version>22.0</capcache.version>
     <cap.cache.dir>${project.basedir}/capcache-${capcache.version}</cap.cache.dir>
+
+    <spring-boot.version>2.6.7</spring-boot.version>
+    <spring-native.version>0.11.5</spring-native.version>
   </properties>
 
   <dependencies>
@@ -42,19 +46,104 @@
       <scope>provided</scope>
     </dependency>
 
+    <dependency>
+      <groupId>org.springframework.experimental</groupId>
+      <artifactId>spring-native</artifactId>
+      <version>${spring-native.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.experimental</groupId>
+      <artifactId>spring-aot</artifactId>
+      <version>${spring-native.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-webflux</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-rsocket</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-test</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.projectreactor</groupId>
+      <artifactId>reactor-test</artifactId>
+      <scope>test</scope>
+    </dependency>
   </dependencies>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-dependencies</artifactId>
+        <version>${spring-boot.version}</version>
+        <scope>import</scope>
+        <type>pom</type>
+      </dependency>
+      <dependency>
+        <groupId>org.junit</groupId>
+        <artifactId>junit-bom</artifactId>
+        <version>5.7.2</version>
+        <scope>import</scope>
+        <type>pom</type>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+  <pluginRepositories>
+    <pluginRepository>
+      <id>spring-release</id>
+      <name>Spring release</name>
+      <url>https://repo.spring.io/release</url>
+    </pluginRepository>
+  </pluginRepositories>
 
   <build>
     <plugins>
       <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.8.1</version>
         <configuration>
           <source>1.8</source>
           <target>1.8</target>
+          <parameters>true</parameters>
         </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+        <version>${spring-boot.version}</version>
+        <configuration>
+          <mainClass>rsocket_test.Test</mainClass>
+        </configuration>
+        <executions>
+          <execution>
+            <goals>
+              <goal>repackage</goal>
+            </goals>
+          </execution>
+        </executions>
       </plugin>
     </plugins>
   </build>
+
+  <repositories>
+    <repository>
+      <id>spring-release</id>
+      <name>Spring release</name>
+      <url>https://repo.spring.io/release</url>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+    </repository>
+  </repositories>
 
   <profiles>
     <profile>
@@ -76,6 +165,7 @@
                   <imageName>${graalvm.image.name}</imageName>
                   <!-- # https://chriswhocodes.com/graalvm_native_image_ce_jdk11_options.html -->
                   <buildArgs>
+                    --allow-incomplete-classpath <!-- todo: check is it necessary for SPRING framework ? -->
                     --no-fallback
                     --verbose
                     -H:DashboardDump=dashboard
@@ -103,6 +193,39 @@
                 </configuration>
               </execution>
             </executions>
+          </plugin>
+
+          <plugin>
+            <groupId>org.springframework.experimental</groupId>
+            <artifactId>spring-aot-maven-plugin</artifactId>
+            <version>${spring-native.version}</version>
+            <configuration>
+              <removeSpelSupport>true</removeSpelSupport>
+              <removeYamlSupport>true</removeYamlSupport>
+            </configuration>
+            <executions>
+              <execution>
+                <id>test-generate</id>
+                <goals>
+                  <goal>test-generate</goal>
+                </goals>
+              </execution>
+              <execution>
+                <id>generate</id>
+                <goals>
+                  <goal>generate</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+
+          <plugin>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-maven-plugin</artifactId>
+            <version>${spring-boot.version}</version>
+            <configuration>
+              <classifier>exec</classifier>
+            </configuration>
           </plugin>
 
           <plugin>

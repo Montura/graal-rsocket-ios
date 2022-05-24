@@ -1,4 +1,4 @@
-# graal-rsokcet-ios
+# graal-rsocket-ios
 
 Inspired by https://github.com/alibaba-rsocket-broker/rsocket-graal-demo
 

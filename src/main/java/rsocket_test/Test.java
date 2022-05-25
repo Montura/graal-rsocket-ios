@@ -11,6 +11,7 @@ import java.net.URI;
 
 public class Test {
     public static void main(String[] args) {
+        System.out.println("args = " + args);
         WebsocketClientTransport ws = WebsocketClientTransport.create(URI.create("ws://rsocket-demo.herokuapp.com/ws"));
         RSocket clientRSocket = RSocketConnector.connectWith(ws).block();
 

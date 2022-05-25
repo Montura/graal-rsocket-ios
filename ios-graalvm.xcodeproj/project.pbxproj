@@ -31,14 +31,14 @@
 		5A4576D527B64B4D002C1EA3 /* ios-graalvm-22.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-graalvm-22.0.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A4576F227B64C12002C1EA3 /* launchscreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = launchscreen.storyboard; sourceTree = "<group>"; };
 		5A4576F527B64C1F002C1EA3 /* iosMain.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = iosMain.mm; path = src/main/cpp/iosMain.mm; sourceTree = "<group>"; };
-		5A4576F727B64C3E002C1EA3 /* llvm.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; name = llvm.o; path = "target/tmparm64-ios/SVM-1644567552770/llvm/llvm.o"; sourceTree = "<group>"; };
-		5A4576F827B64C3E002C1EA3 /* java.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; name = java.o; path = "target/tmparm64-ios/SVM-1644567552770/java.o"; sourceTree = "<group>"; };
-		5A4576FC27B64C70002C1EA3 /* graal-svm-arm64-ios-r.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "graal-svm-arm64-ios-r.a"; path = "graal-svm-ios-libs-22.0/graal-svm-arm64-ios-r.a"; sourceTree = "<group>"; };
+		5A4576F727B64C3E002C1EA3 /* llvm.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; name = llvm.o; path = "target/tmparm64-ios/llvm.o"; sourceTree = "<group>"; };
+		5A4576F827B64C3E002C1EA3 /* java.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; name = java.o; path = "target/tmparm64-ios/java.o"; sourceTree = "<group>"; };
+		5A4576FC27B64C70002C1EA3 /* graal-svm-arm64-ios-r.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "graal-svm-arm64-ios-r.a"; path = "../ios_graalvm/graal-svm-ios-libs-22.0/graal-svm-arm64-ios-r.a"; sourceTree = "<group>"; };
 		5A45770027B64C7E002C1EA3 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		5A45770227B64C84002C1EA3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5A45770627B64E19002C1EA3 /* Info.plist.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Info.plist.xml; sourceTree = "<group>"; };
 		5A45770A27B64F86002C1EA3 /* graal-svm-arm64-ios-r.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "graal-svm-arm64-ios-r.a"; path = "graal-svm-ios-libs-22.0.1/graal-svm-arm64-ios-r.a"; sourceTree = "<group>"; };
-		5A45770B27B64F86002C1EA3 /* jdk-arm64-ios-r.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "jdk-arm64-ios-r.a"; path = "jdk-static-ios-lib/jdk-arm64-ios-r.a"; sourceTree = "<group>"; };
+		5A45770B27B64F86002C1EA3 /* jdk-arm64-ios-r.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "jdk-arm64-ios-r.a"; path = "jdk-arm64-ios-lib/jdk-arm64-ios-r.a"; sourceTree = "<group>"; };
 		5A45772027B64F94002C1EA3 /* ios-graalvm-22.0.1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-graalvm-22.0.1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -352,7 +352,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 6H79QDPRAV;
+				DEVELOPMENT_TEAM = PLQ4TN99DJ;
 				ENABLE_BITCODE = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Info.plist.xml;
@@ -387,7 +387,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 6H79QDPRAV;
+				DEVELOPMENT_TEAM = PLQ4TN99DJ;
 				ENABLE_BITCODE = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Info.plist.xml;

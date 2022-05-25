@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "5A4576D427B64B4D002C1EA3"
-               BuildableName = "ios-graalvm-22.0.app"
-               BlueprintName = "ios-graalvm-22.0"
-               ReferencedContainer = "container:ios-graalvm.xcodeproj">
+               BlueprintIdentifier = "5A45770E27B64F94002C1EA3"
+               BuildableName = "ios-graalvm-22.0.1.app"
+               BlueprintName = "rsocket-ios-graalvm-22.0.1"
+               ReferencedContainer = "container:rsocket-ios-graalvm.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -44,10 +44,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "5A4576D427B64B4D002C1EA3"
-            BuildableName = "ios-graalvm-22.0.app"
-            BlueprintName = "ios-graalvm-22.0"
-            ReferencedContainer = "container:ios-graalvm.xcodeproj">
+            BlueprintIdentifier = "5A45770E27B64F94002C1EA3"
+            BuildableName = "ios-graalvm-22.0.1.app"
+            BlueprintName = "rsocket-ios-graalvm-22.0.1"
+            ReferencedContainer = "container:rsocket-ios-graalvm.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -61,10 +61,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "5A4576D427B64B4D002C1EA3"
-            BuildableName = "ios-graalvm-22.0.app"
-            BlueprintName = "ios-graalvm-22.0"
-            ReferencedContainer = "container:ios-graalvm.xcodeproj">
+            BlueprintIdentifier = "5A45770E27B64F94002C1EA3"
+            BuildableName = "ios-graalvm-22.0.1.app"
+            BlueprintName = "rsocket-ios-graalvm-22.0.1"
+            ReferencedContainer = "container:rsocket-ios-graalvm.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

@@ -21,7 +21,6 @@
 		5A45771827B64F94002C1EA3 /* java.o in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A4576F827B64C3E002C1EA3 /* java.o */; };
 		5A45771B27B64F94002C1EA3 /* launchscreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A4576F227B64C12002C1EA3 /* launchscreen.storyboard */; };
 		5A45771C27B64F94002C1EA3 /* Info.plist.xml in Resources */ = {isa = PBXBuildFile; fileRef = 5A45770627B64E19002C1EA3 /* Info.plist.xml */; };
-		5A45772227B64FB8002C1EA3 /* graal-svm-arm64-ios-r.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A45770A27B64F86002C1EA3 /* graal-svm-arm64-ios-r.a */; };
 		5A45772327B64FB8002C1EA3 /* jdk-arm64-ios-r.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A45770B27B64F86002C1EA3 /* jdk-arm64-ios-r.a */; };
 		5A96480C27B6504C00738168 /* graal-svm-arm64-ios-d.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A4576FC27B64C70002C1EA3 /* graal-svm-arm64-ios-d.a */; };
 		5A96480F27B666EB00738168 /* jdk-arm64-ios-r.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A45770B27B64F86002C1EA3 /* jdk-arm64-ios-r.a */; };
@@ -33,11 +32,10 @@
 		5A4576F527B64C1F002C1EA3 /* iosMain.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = iosMain.mm; path = src/main/cpp/iosMain.mm; sourceTree = "<group>"; };
 		5A4576F727B64C3E002C1EA3 /* llvm.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; name = llvm.o; path = "target/tmparm64-ios/llvm.o"; sourceTree = "<group>"; };
 		5A4576F827B64C3E002C1EA3 /* java.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; name = java.o; path = "target/tmparm64-ios/java.o"; sourceTree = "<group>"; };
-		5A4576FC27B64C70002C1EA3 /* graal-svm-arm64-ios-d.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "graal-svm-arm64-ios-d.a"; path = "graal-svm-ios-libs-22.2/graal-svm-arm64-ios-d.a"; sourceTree = "<group>"; };
+		5A4576FC27B64C70002C1EA3 /* graal-svm-arm64-ios-d.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "graal-svm-arm64-ios-d.a"; path = "graal-svm-ios-libs-22.1/graal-svm-arm64-ios-d.a"; sourceTree = "<group>"; };
 		5A45770027B64C7E002C1EA3 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		5A45770227B64C84002C1EA3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5A45770627B64E19002C1EA3 /* Info.plist.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Info.plist.xml; sourceTree = "<group>"; };
-		5A45770A27B64F86002C1EA3 /* graal-svm-arm64-ios-r.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "graal-svm-arm64-ios-r.a"; path = "graal-svm-ios-libs-22.0.1/graal-svm-arm64-ios-r.a"; sourceTree = "<group>"; };
 		5A45770B27B64F86002C1EA3 /* jdk-arm64-ios-r.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "jdk-arm64-ios-r.a"; path = "jdk-arm64-ios-lib/jdk-arm64-ios-r.a"; sourceTree = "<group>"; };
 		5A45772027B64F94002C1EA3 /* rsocket-ios-graalvm-22.0.1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "rsocket-ios-graalvm-22.0.1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -60,7 +58,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5A45772227B64FB8002C1EA3 /* graal-svm-arm64-ios-r.a in Frameworks */,
 				5A45772327B64FB8002C1EA3 /* jdk-arm64-ios-r.a in Frameworks */,
 				5A45771227B64F94002C1EA3 /* Foundation.framework in Frameworks */,
 				5A45771327B64F94002C1EA3 /* MobileCoreServices.framework in Frameworks */,
@@ -95,31 +92,14 @@
 		5A4576FB27B64C6F002C1EA3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5A4576FC27B64C70002C1EA3 /* graal-svm-arm64-ios-d.a */,
 				5A45770B27B64F86002C1EA3 /* jdk-arm64-ios-r.a */,
-				5A45770927B64F76002C1EA3 /* 22.0.1 */,
-				5A45770827B64F62002C1EA3 /* 22.0 */,
 				5A4576F727B64C3E002C1EA3 /* llvm.o */,
 				5A4576F827B64C3E002C1EA3 /* java.o */,
 				5A45770227B64C84002C1EA3 /* Foundation.framework */,
 				5A45770027B64C7E002C1EA3 /* MobileCoreServices.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		5A45770827B64F62002C1EA3 /* 22.0 */ = {
-			isa = PBXGroup;
-			children = (
-				5A4576FC27B64C70002C1EA3 /* graal-svm-arm64-ios-d.a */,
-			);
-			name = 22.0;
-			sourceTree = "<group>";
-		};
-		5A45770927B64F76002C1EA3 /* 22.0.1 */ = {
-			isa = PBXGroup;
-			children = (
-				5A45770A27B64F86002C1EA3 /* graal-svm-arm64-ios-r.a */,
-			);
-			name = 22.0.1;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
